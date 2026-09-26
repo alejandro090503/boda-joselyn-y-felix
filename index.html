@@ -750,6 +750,18 @@ body{font-weight:500}
 .lang-btn{display:block;width:100%;margin:0 auto 12px;padding:17px 28px;background:transparent;border:1.4px solid #F7E7CE;border-radius:50px;color:#fff;font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;letter-spacing:4px;text-transform:uppercase;cursor:pointer;transition:background .3s ease,transform .2s ease}
 .lang-btn:active{transform:scale(.97);background:rgba(247,231,206,.22)}
 
+
+/* ═══ CORTEJO · pequeños ═══ */
+.ct-little{max-width:420px;margin:34px auto 0}
+.ct-little-orn svg{width:160px;height:14px;display:block;margin:0 auto 14px}
+.ct-little-title{display:block;font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.ct-little-grid{display:flex;gap:10px;justify-content:center}
+.ct-little-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;padding:16px 8px 15px;background:rgba(247,231,206,.42);border:1px solid rgba(131,17,0,.2);border-radius:14px;color:var(--accent)}
+.ct-little-item svg{width:22px;height:22px;opacity:.8}
+.ct-little-lbl{font-family:'Cormorant Garamond',serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);line-height:1.3}
+.ct-little-name{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;line-height:1.4;color:var(--text)}
+@media(max-width:360px){.ct-little-name{font-size:14px}.ct-little-lbl{font-size:10px}}
+
 </style>
 </head>
 <body>
@@ -918,7 +930,7 @@ body{font-weight:500}
     <div class="family-parents rv">
       <div class="family-side">
         <p class="family-label" data-en="Parents of the Groom">Padres del Novio</p>
-        <p class="family-names">Sifredo Pineda<br>Soledad Pineda</p>
+        <p class="family-names">Sifredo Aguirre<br>Soledad Aguirre</p>
       </div>
       <div class="family-divider-v"></div>
       <div class="family-side">
@@ -983,6 +995,21 @@ body{font-weight:500}
           <span class="ct-n ct-n--r">Tamara Caballero</span>
         </div>
         <div class="ct-row">
+          <span class="ct-n ct-n--l">Samantha Murillo</span>
+          <span class="ct-link" aria-hidden="true"></span>
+          <span class="ct-n ct-n--r">Anthony Murillo</span>
+        </div>
+        <div class="ct-row">
+          <span class="ct-n ct-n--l">Mario Rodríguez</span>
+          <span class="ct-link" aria-hidden="true"></span>
+          <span class="ct-n ct-n--r">Cindy Rodriguez</span>
+        </div>
+        <div class="ct-row">
+          <span class="ct-n ct-n--l">Glenda Caballero</span>
+          <span class="ct-link" aria-hidden="true"></span>
+          <span class="ct-n ct-n--r">Oswaldo Marín</span>
+        </div>
+        <div class="ct-row">
           <span class="ct-n ct-n--l">Eduardo Caballero</span>
           <span class="ct-link" aria-hidden="true"></span>
           <span class="ct-n ct-n--r">Jeannette Valencia</span>
@@ -1007,6 +1034,30 @@ body{font-weight:500}
           <span class="ct-link" aria-hidden="true"></span>
           <span class="ct-n ct-n--r">Doris Calderon</span>
         </div>
+    </div>
+
+    <div class="ct-little rv">
+      <div class="ct-little-orn" aria-hidden="true">
+        <svg viewBox="0 0 160 14" fill="none"><line x1="8" y1="7" x2="62" y2="7" stroke="#831100" stroke-width="1" opacity=".35"/><circle cx="80" cy="7" r="3.2" fill="#831100" opacity=".5"/><line x1="98" y1="7" x2="152" y2="7" stroke="#831100" stroke-width="1" opacity=".35"/></svg>
+      </div>
+      <span class="ct-little-title" data-en="Our little ones">Los pequeños del cortejo</span>
+      <div class="ct-little-grid">
+        <div class="ct-little-item">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="8.4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="6.4" r="2.1" fill="currentColor"/></svg>
+          <span class="ct-little-lbl" data-en="Ring bearers">Anillos</span>
+          <span class="ct-little-name">Natalia Hernandez<br>Noe Hernandez</span>
+        </div>
+        <div class="ct-little-item">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="3.4" fill="currentColor"/><g fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 12.6c0-4 1.6-6.2 0-8.2-1.6 2-0 4.2 0 8.2z"/><path d="M19.4 16c4 0 6.2 1.6 8.2 0-2-1.6-4.2 0-8.2 0z"/><path d="M16 19.4c0 4-1.6 6.2 0 8.2 1.6-2 0-4.2 0-8.2z"/><path d="M12.6 16c-4 0-6.2-1.6-8.2 0 2 1.6 4.2 0 8.2 0z"/></g></svg>
+          <span class="ct-little-lbl" data-en="Flower girl">Niña de las flores</span>
+          <span class="ct-little-name">Leilanie Aguirre</span>
+        </div>
+        <div class="ct-little-item">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27C9.5 22.5 5 18 5 12.9 5 9.1 8 6.2 11.6 6.2c2.1 0 3.6 1 4.4 2.3.8-1.3 2.3-2.3 4.4-2.3C24 6.2 27 9.1 27 12.9 27 18 22.5 22.5 16 27z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span class="ct-little-lbl" data-en="Flower boy">Niño de las flores</span>
+          <span class="ct-little-name">Xavier Torres</span>
+        </div>
+      </div>
     </div>
   </section>
 
