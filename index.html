@@ -716,16 +716,63 @@ body{font-weight:500}
 .qr-c.bl{bottom:4px;left:4px;border-bottom-width:1.5px;border-left-width:1.5px}
 .qr-c.br{bottom:4px;right:4px;border-bottom-width:1.5px;border-right-width:1.5px}
 
+
+/* ═══ ITINERARIO · nota ═══ */
+.itin-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;font-weight:500;line-height:1.7;color:var(--dark);max-width:330px;margin:30px auto 0;text-align:center}
+
+/* ═══ CORTEJO ═══ */
+#cortejo{padding:64px 22px;background:var(--bg);text-align:center}
+.ct-honor{display:flex;gap:14px;justify-content:center;margin:28px auto 34px;max-width:420px}
+.ct-medal{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:20px 10px 18px;background:rgba(247,231,206,.42);border:1px solid rgba(131,17,0,.22);border-radius:16px}
+.ct-medal svg{width:26px;height:26px;fill:var(--accent);opacity:.75}
+.ct-honor-lbl{font-family:'Cormorant Garamond',serif;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.ct-honor-name{font-family:'Great Vibes',cursive;font-size:26px;line-height:1.25;color:var(--dark)}
+.ct-pairs{position:relative;max-width:420px;margin:0 auto}
+.ct-heads{display:flex;justify-content:space-between;gap:12px;margin-bottom:14px;padding:0 2px}
+.ct-heads span{flex:1;font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.ct-heads span:first-child{text-align:right}
+.ct-heads span:last-child{text-align:left}
+.ct-spine{position:absolute;top:34px;bottom:8px;left:50%;width:1px;transform:translateX(-.5px);background:linear-gradient(to bottom,transparent,rgba(131,17,0,.35) 14%,rgba(131,17,0,.35) 86%,transparent)}
+.ct-row{display:flex;align-items:center;gap:10px;padding:9px 0}
+.ct-n{flex:1;font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;line-height:1.35;color:var(--text)}
+.ct-n--l{text-align:right}
+.ct-n--r{text-align:left}
+.ct-link{flex:0 0 9px;height:9px;border-radius:50%;background:var(--accent);opacity:.45;position:relative;z-index:1;box-shadow:0 0 0 4px var(--bg)}
+@media(max-width:360px){.ct-n{font-size:15px}.ct-honor-name{font-size:23px}}
+
+
+/* ═══ SELECTOR DE IDIOMA ═══ */
+#lang-screen{position:fixed;inset:0;z-index:10005;background:#5c0701;display:flex;align-items:center;justify-content:center;padding:32px;opacity:0}
+.lang-in{text-align:center;max-width:320px;width:100%}
+.lang-orn{width:170px;height:38px;display:block;margin:0 auto 28px}
+.lang-q{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:21px;letter-spacing:1.5px;color:#fff;line-height:1.55;margin-bottom:28px}
+.lang-q span{display:block;font-size:14px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#F7E7CE;opacity:.95;margin-top:8px;font-style:normal}
+.lang-btn{display:block;width:100%;margin:0 auto 12px;padding:17px 28px;background:transparent;border:1.4px solid #F7E7CE;border-radius:50px;color:#fff;font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;letter-spacing:4px;text-transform:uppercase;cursor:pointer;transition:background .3s ease,transform .2s ease}
+.lang-btn:active{transform:scale(.97);background:rgba(247,231,206,.22)}
+
 </style>
 </head>
 <body>
+
+<div id="lang-screen">
+  <div class="lang-in">
+    <svg class="lang-orn" viewBox="0 0 170 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6 19 Q44 7 85 19 T164 19" stroke="#F7E7CE" stroke-width=".9" opacity=".65"/>
+      <circle cx="85" cy="19" r="4.5" fill="none" stroke="#F7E7CE" stroke-width=".9"/>
+      <circle cx="85" cy="19" r="1.8" fill="#F7E7CE"/>
+    </svg>
+    <p class="lang-q">Elige tu idioma<span>Choose your language</span></p>
+    <button type="button" class="lang-btn" data-lang="es">Espa&ntilde;ol</button>
+    <button type="button" class="lang-btn" data-lang="en">English</button>
+  </div>
+</div>
 
 <!-- ═══════════════════════════════════════════ LOADER -->
 <div id="loader">
   <div class="ld-mono" id="ldMono">
     <span>J</span><span>&nbsp;</span><span>&amp;</span><span>&nbsp;</span><span>F</span>
   </div>
-  <p class="ld-tag" id="ldTag">Nos casamos &middot; 21 Noviembre 2026</p>
+  <p class="ld-tag" id="ldTag" data-en="We're getting married &middot; November 21, 2026">Nos casamos &middot; 21 Noviembre 2026</p>
 </div>
 
 <!-- ═══════════════════════════════════════════ PÉTALOS -->
@@ -735,7 +782,7 @@ body{font-weight:500}
 <div id="envelope-screen">
   <img id="envImage" src="sobre.jpg" alt="Invitación de boda de Joselyn y Felix">
   <video id="envVideo" src="apertura.mp4" muted playsinline preload="auto" poster="sobre.jpg"></video>
-  <div class="env-tap" id="envTap">Toca para abrir</div>
+  <div class="env-tap" id="envTap" data-en="Tap to open">Toca para abrir</div>
 </div>
 
 <!-- ═══════════════════════════════════════════ WRAP -->
@@ -751,7 +798,7 @@ body{font-weight:500}
       <span class="hero-groom rv">Felix</span>
     </div>
     <div class="scroll-hint" id="scrollHint">
-      <span class="scroll-hint-txt">Desliza</span>
+      <span class="scroll-hint-txt" data-en="Scroll">Desliza</span>
       <span class="scroll-hint-arrow">
         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </span>
@@ -794,10 +841,10 @@ body{font-weight:500}
   <section id="fecha">
     <div class="fecha-block rv">
       <div class="fecha-vline"></div>
-      <p class="fecha-label">Sábado</p>
+      <p class="fecha-label" data-en="Saturday">Sábado</p>
       <div class="fecha-row">
         <span class="fecha-rule fecha-rule--l"></span>
-        <span class="fecha-main">21 &middot; Noviembre &middot; 2026</span>
+        <span class="fecha-main" data-en="November &middot; 21 &middot; 2026">21 &middot; Noviembre &middot; 2026</span>
         <span class="fecha-rule fecha-rule--r"></span>
       </div>
       <div class="fecha-vline"></div>
@@ -806,13 +853,13 @@ body{font-weight:500}
 
   <!-- ── 3. CUENTA REGRESIVA ── -->
   <section id="countdown" class="sec sec--surface">
-    <p class="eyebrow rv">Faltan</p>
-    <h2 class="script-title rv">Cuenta Regresiva</h2>
+    <p class="eyebrow rv" data-en="Counting down">Faltan</p>
+    <h2 class="script-title rv" data-en="Countdown">Cuenta Regresiva</h2>
     <div class="cd-grid">
-      <div class="cd-box rv"><div class="cd-num" id="cdDias">000</div><div class="cd-lbl">Días</div></div>
-      <div class="cd-box rv"><div class="cd-num" id="cdHoras">00</div><div class="cd-lbl">Horas</div></div>
-      <div class="cd-box rv"><div class="cd-num" id="cdMins">00</div><div class="cd-lbl">Min</div></div>
-      <div class="cd-box rv"><div class="cd-num" id="cdSecs">00</div><div class="cd-lbl">Seg</div></div>
+      <div class="cd-box rv"><div class="cd-num" id="cdDias">000</div><div class="cd-lbl" data-en="Days">Días</div></div>
+      <div class="cd-box rv"><div class="cd-num" id="cdHoras">00</div><div class="cd-lbl" data-en="Hours">Horas</div></div>
+      <div class="cd-box rv"><div class="cd-num" id="cdMins">00</div><div class="cd-lbl" data-en="Min">Min</div></div>
+      <div class="cd-box rv"><div class="cd-num" id="cdSecs">00</div><div class="cd-lbl" data-en="Sec">Seg</div></div>
     </div>
   </section>
 
@@ -830,7 +877,7 @@ body{font-weight:500}
   <!-- ── 4. FRASE ROMÁNTICA ── -->
   <section id="quote" class="sec sec--bg">
     <p class="quote-txt rv">
-      &ldquo;Hay amores que el tiempo afirma y el destino sella; el nuestro es de esos que no buscan explicación — simplemente suceden.&rdquo;
+      <span data-en="&ldquo;Some loves are confirmed by time and sealed by destiny; ours is one of those that need no explanation — they simply happen.&rdquo;">&ldquo;Hay amores que el tiempo afirma y el destino sella; el nuestro es de esos que no buscan explicación — simplemente suceden.&rdquo;</span>
     </p>
     <span class="quote-sig rv">Joselyn &amp; Felix</span>
   </section>
@@ -865,29 +912,102 @@ body{font-weight:500}
         <path d="M180 58 L180 50" stroke="#831100" stroke-width="1" opacity=".5"/>
       </svg>
     </div>
-    <p class="eyebrow rv">Con la bendición de</p>
-    <h2 class="script-title rv">Nuestras Familias</h2>
+    <p class="eyebrow rv" data-en="With the blessing of">Con la bendición de</p>
+    <h2 class="script-title rv" data-en="Our Families">Nuestras Familias</h2>
 
     <div class="family-parents rv">
       <div class="family-side">
-        <p class="family-label">Padres del Novio</p>
+        <p class="family-label" data-en="Parents of the Groom">Padres del Novio</p>
         <p class="family-names">Sifredo Pineda<br>Soledad Pineda</p>
       </div>
       <div class="family-divider-v"></div>
       <div class="family-side">
-        <p class="family-label">Padres de la Novia</p>
+        <p class="family-label" data-en="Parents of the Bride">Padres de la Novia</p>
         <p class="family-names">Santos Caballero<br>Jeannette Caballero</p>
       </div>
     </div>
 
     <div class="family-section-sep rv"></div>
-    <p class="eyebrow padrinos-eyebrow rv">Nuestros Padrinos</p>
+    <p class="eyebrow padrinos-eyebrow rv" data-en="Our Godparents">Nuestros Padrinos</p>
     <div class="padrinos-ticker rv" id="padrinosTicker">
       <div class="padrinos-tick-name">Tamara Caballero</div>
       <div class="padrinos-tick-name">Lucas Pérez</div>
       <div class="padrinos-tick-name">Glenda Caballero</div>
     </div>
     <p class="padrinos-tick-count rv" id="padrinosCount">1 / 3</p>
+  </section>
+
+  <!-- ── ORNAMENTO B ── -->
+  <div class="ornament rv">
+    <svg viewBox="0 0 260 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="20" y1="16" x2="112" y2="16" stroke="#831100" stroke-width="1" opacity=".4"/>
+      <rect x="125" y="9" width="10" height="10" rx="1" transform="rotate(45 130 14)" fill="#831100" opacity=".5"/>
+      <line x1="148" y1="16" x2="240" y2="16" stroke="#831100" stroke-width="1" opacity=".4"/>
+      <circle cx="20" cy="16" r="2" fill="#831100" opacity=".35"/>
+      <circle cx="240" cy="16" r="2" fill="#831100" opacity=".35"/>
+    </svg>
+  </div>
+
+  <!-- ── CORTEJO ── -->
+  <section id="cortejo" class="sec">
+    <p class="eyebrow rv" data-en="Walking with us">Caminan con nosotros</p>
+    <h2 class="script-title rv" data-en="Wedding Party">Cortejo Nupcial</h2>
+
+    <div class="ct-honor rv">
+      <div class="ct-medal">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6 L27.6 17.4 L39.4 17.4 L29.9 24.4 L33.5 35.8 L24 28.8 L14.5 35.8 L18.1 24.4 L8.6 17.4 L20.4 17.4 Z"/></svg>
+        <span class="ct-honor-lbl" data-en="Best Man">Padrino de Honor</span>
+        <span class="ct-honor-name">Mario Rodriguez</span>
+      </div>
+      <div class="ct-medal">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6 L27.6 17.4 L39.4 17.4 L29.9 24.4 L33.5 35.8 L24 28.8 L14.5 35.8 L18.1 24.4 L8.6 17.4 L20.4 17.4 Z"/></svg>
+        <span class="ct-honor-lbl" data-en="Maid of Honor">Madrina de Honor</span>
+        <span class="ct-honor-name">Glenda Caballero</span>
+      </div>
+    </div>
+
+    <div class="ct-pairs rv">
+      <div class="ct-heads">
+        <span data-en="Groomsmen">Caballeros</span>
+        <span data-en="Bridesmaids">Damas</span>
+      </div>
+      <div class="ct-spine" aria-hidden="true"></div>
+        <div class="ct-row">
+          <span class="ct-n ct-n--l">Roberto Caballero</span>
+          <span class="ct-link" aria-hidden="true"></span>
+          <span class="ct-n ct-n--r">Marcela Rivas</span>
+        </div>
+        <div class="ct-row">
+          <span class="ct-n ct-n--l">Adolfo Caballero</span>
+          <span class="ct-link" aria-hidden="true"></span>
+          <span class="ct-n ct-n--r">Tamara Caballero</span>
+        </div>
+        <div class="ct-row">
+          <span class="ct-n ct-n--l">Eduardo Caballero</span>
+          <span class="ct-link" aria-hidden="true"></span>
+          <span class="ct-n ct-n--r">Jeannette Valencia</span>
+        </div>
+        <div class="ct-row">
+          <span class="ct-n ct-n--l">Robert Garcia</span>
+          <span class="ct-link" aria-hidden="true"></span>
+          <span class="ct-n ct-n--r">Rosemarie Garcia</span>
+        </div>
+        <div class="ct-row">
+          <span class="ct-n ct-n--l">Luis Cejudo</span>
+          <span class="ct-link" aria-hidden="true"></span>
+          <span class="ct-n ct-n--r">Martha Cejudo</span>
+        </div>
+        <div class="ct-row">
+          <span class="ct-n ct-n--l">Nelson Rodríguez</span>
+          <span class="ct-link" aria-hidden="true"></span>
+          <span class="ct-n ct-n--r">Janette Padilla</span>
+        </div>
+        <div class="ct-row">
+          <span class="ct-n ct-n--l">Benjamin Calderon</span>
+          <span class="ct-link" aria-hidden="true"></span>
+          <span class="ct-n ct-n--r">Doris Calderon</span>
+        </div>
+    </div>
   </section>
 
   <!-- ── ORNAMENTO A (bg → surface) ── -->
@@ -922,41 +1042,41 @@ body{font-weight:500}
 
   <!-- ── 7. UBICACIÓN ── -->
   <section id="ubicacion" class="sec sec--surface">
-    <p class="eyebrow rv">Dónde Celebramos</p>
-    <h2 class="script-title rv">Ubicación</h2>
+    <p class="eyebrow rv" data-en="Where we celebrate">Dónde Celebramos</p>
+    <h2 class="script-title rv" data-en="Location">Ubicación</h2>
 
     <div class="loc-card rv">
-      <div class="loc-name">Ceremonia Religiosa</div>
-      <div class="loc-sub">Sede del evento</div>
+      <div class="loc-name" data-en="Religious Ceremony">Ceremonia Religiosa</div>
+      <div class="loc-sub" data-en="Event venue">Sede del evento</div>
       <div class="loc-address">7348 Bellaire Ave<br>North Hollywood, CA 91605</div>
       <div class="loc-city">North Hollywood, California</div>
       <div class="loc-hours">5:00 PM</div>
       <a href="https://www.google.com/maps/search/?api=1&amp;query=7348+Bellaire+Ave+North+Hollywood+CA+91605"
          target="_blank" rel="noopener" class="btn-map">
         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-        Ver en Google Maps
+        <span data-en="View on Google Maps">Ver en Google Maps</span>
       </a>
     </div>
 
     <div class="loc-card rv">
-      <div class="loc-name">Recepción</div>
-      <div class="loc-sub">Misma sede</div>
+      <div class="loc-name" data-en="Reception">Recepción</div>
+      <div class="loc-sub" data-en="Same venue">Misma sede</div>
       <div class="loc-address">7348 Bellaire Ave<br>North Hollywood, CA 91605</div>
       <div class="loc-city">North Hollywood, California</div>
       <div class="loc-hours">7:00 PM</div>
       <a href="https://www.google.com/maps/search/?api=1&amp;query=7348+Bellaire+Ave+North+Hollywood+CA+91605"
          target="_blank" rel="noopener" class="btn-map">
         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-        Ver en Google Maps
+        <span data-en="View on Google Maps">Ver en Google Maps</span>
       </a>
     </div>
 
     <div class="loc-cal-divider rv"></div>
-    <p class="loc-cal-eyebrow rv">Agenda el día especial</p>
+    <p class="loc-cal-eyebrow rv" data-en="Save the special day">Agenda el día especial</p>
     <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Joselyn+%26+Felix&dates=20261122T010000Z/20261122T070000Z&details=Ceremonia+Religiosa+5%3A00+PM+%7C+Recepci%C3%B3n+7%3A00+PM+%7C+7348+Bellaire+Ave%2C+North+Hollywood%2C+CA+91605&location=7348+Bellaire+Ave+North+Hollywood+CA+91605"
        target="_blank" rel="noopener" class="btn-cal rv">
       <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5C3.89 4 3 4.9 3 6v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v10zM7 11h5v5H7z"/></svg>
-      Guardar en Mi Calendario
+      <span data-en="Save to My Calendar">Guardar en Mi Calendario</span>
     </a>
   </section>
 
@@ -971,15 +1091,15 @@ body{font-weight:500}
         <circle cx="240" cy="16" r="2" fill="#831100" opacity=".35"/>
       </svg>
     </div>
-    <p class="eyebrow rv">Programa del Día</p>
-    <h2 class="script-title rv">Itinerario</h2>
+    <p class="eyebrow rv" data-en="Schedule of the day">Programa del Día</p>
+    <h2 class="script-title rv" data-en="Itinerary">Itinerario</h2>
 
     <div class="itin-grid" id="itinGrid">
       <div class="itin-spine"></div>
 
       <div class="itin-item itin-row-l">
-        <div class="itin-time">5:00 PM</div>
-        <div class="itin-evt">Ceremonia Religiosa</div>
+        <div class="itin-time" data-en="5:00 – 5:30 PM">5:00 – 5:30 PM</div>
+        <div class="itin-evt" data-en="Cocktail hour">Hora del cóctel</div>
       </div>
       <div class="itin-dot-col"><div class="itin-dot"></div></div>
       <div></div>
@@ -987,13 +1107,13 @@ body{font-weight:500}
       <div></div>
       <div class="itin-dot-col"><div class="itin-dot"></div></div>
       <div class="itin-item itin-item--r itin-row-r">
-        <div class="itin-time">7:00 PM</div>
-        <div class="itin-evt">Recepción y Cena</div>
+        <div class="itin-time" data-en="5:45 PM">5:45 PM</div>
+        <div class="itin-evt" data-en="Groom and bride walk">Entrada de los novios</div>
       </div>
 
       <div class="itin-item itin-row-l">
-        <div class="itin-time">Por confirmar</div>
-        <div class="itin-evt">Vals y Brindis</div>
+        <div class="itin-time" data-en="7:00 PM">7:00 PM</div>
+        <div class="itin-evt" data-en="Dinner">Cena</div>
       </div>
       <div class="itin-dot-col"><div class="itin-dot"></div></div>
       <div></div>
@@ -1001,10 +1121,11 @@ body{font-weight:500}
       <div></div>
       <div class="itin-dot-col"><div class="itin-dot"></div></div>
       <div class="itin-item itin-item--r itin-row-r">
-        <div class="itin-time">Por confirmar</div>
-        <div class="itin-evt">Celebración y Baile</div>
+        <div class="itin-time" data-en="Right after">Enseguida</div>
+        <div class="itin-evt" data-en="Dancing">Baile</div>
       </div>
     </div>
+    <p class="itin-note rv" data-en="Dinner and dancing to follow immediately after the ceremony.">La cena y el baile serán inmediatamente después de la ceremonia.</p>
   </section>
 
   <!-- ── ORNAMENTO A ── -->
@@ -1039,27 +1160,27 @@ body{font-weight:500}
 
   <!-- ── 9. DRESS CODE ── -->
   <section id="dresscode" class="sec sec--surface">
-    <p class="eyebrow rv">Etiqueta</p>
-    <h2 class="script-title rv">Dress Code</h2>
-    <p class="dc-subtitle rv">Cóctel &middot; Formal</p>
-    <p class="dc-note rv">Te pedimos reservar el <strong>blanco</strong> y los <strong>tonos rojo, vino y guinda</strong> para los novios.</p>
+    <p class="eyebrow rv" data-en="Attire">Etiqueta</p>
+    <h2 class="script-title rv" data-en="Dress Code">Dress Code</h2>
+    <p class="dc-subtitle rv" data-en="Cocktail &middot; Formal">Cóctel &middot; Formal</p>
+    <p class="dc-note rv" data-en="Please leave <strong>white</strong> and <strong>red, wine and burgundy tones</strong> for the bride and groom.">Te pedimos reservar el <strong>blanco</strong> y los <strong>tonos rojo, vino y guinda</strong> para los novios.</p>
     <div class="dc-avoid rv">
-      <span class="dc-avoid-label">Colores reservados</span>
+      <span class="dc-avoid-label" data-en="Reserved colors">Colores reservados</span>
       <div class="dc-avoid-dots">
         <span class="dc-dot" style="background:#FFFFFF;border-color:rgba(131,17,0,.35)"></span>
         <span class="dc-dot" style="background:#831100"></span>
         <span class="dc-dot" style="background:#5c0701"></span>
       </div>
     </div>
-    <p class="dc-note rv" style="margin-top:22px">Pero lo más importante es tu presencia y tu sonrisa.</p>
+    <p class="dc-note rv" style="margin-top:22px" data-en="But what matters most is your presence and your smile.">Pero lo más importante es tu presencia y tu sonrisa.</p>
 
 
   </section>
 
   <!-- ── 10. GALERÍA — NUESTRA HISTORIA ── -->
   <section id="galeria">
-    <h2 class="script-title rv">Nuestra Historia</h2>
-    <p class="historia-txt rv">Hay historias que no necesitan explicarse: simplemente se viven. La nuestra se ha ido escribiendo despacio, en lo cotidiano, entre risas, decisiones compartidas y días en los que elegimos quedarnos el uno junto al otro.<br><br>Hoy, con la bendición de Dios y el cariño de nuestras familias, damos el paso más importante: unir nuestras vidas para siempre con un «Sí, acepto».<br><br>Nos hace muy felices invitarlos a celebrar con nosotros. Su compañía es el regalo que hará de este día un recuerdo inolvidable.</p>
+    <h2 class="script-title rv" data-en="Our Story">Nuestra Historia</h2>
+    <p class="historia-txt rv" data-en="Some stories need no explanation: they are simply lived. Ours has been written slowly, in everyday life, between laughter, shared decisions and days when we chose to stay by each other’s side.<br><br>Today, with God’s blessing and the love of our families, we take the most important step: joining our lives forever with an «I do».<br><br>It makes us very happy to invite you to celebrate with us. Your company is the gift that will make this day an unforgettable memory.">Hay historias que no necesitan explicarse: simplemente se viven. La nuestra se ha ido escribiendo despacio, en lo cotidiano, entre risas, decisiones compartidas y días en los que elegimos quedarnos el uno junto al otro.<br><br>Hoy, con la bendición de Dios y el cariño de nuestras familias, damos el paso más importante: unir nuestras vidas para siempre con un «Sí, acepto».<br><br>Nos hace muy felices invitarlos a celebrar con nosotros. Su compañía es el regalo que hará de este día un recuerdo inolvidable.</p>
     <div class="wheel-scene rv" id="wheel-scene">
       <div class="wheel-ring" id="wheel-ring">
         <div class="wheel-card"><img src="foto1.jpg" alt="Joselyn &amp; Felix"></div>
@@ -1073,7 +1194,7 @@ body{font-weight:500}
         <div class="wheel-card"><img src="foto9.jpg" alt="Joselyn &amp; Felix"></div>
       </div>
     </div>
-    <p class="gal-hint rv">Arrastra para girar</p>
+    <p class="gal-hint rv" data-en="Drag to spin">Arrastra para girar</p>
   </section>
 
   <!-- ── 12. ÁLBUM COMPARTIDO ── -->
@@ -1093,16 +1214,16 @@ body{font-weight:500}
         <path d="M180 58 L180 50" stroke="#831100" stroke-width="1" opacity=".5"/>
       </svg>
     </div>
-    <p class="eyebrow rv">Comparte el Momento</p>
-    <h2 class="script-title rv">Álbum Compartido</h2>
-    <p class="album-note rv">¡Queremos ver la boda a través de tus ojos! Escanea el código y sube tus fotos y videos al álbum de Joselyn &amp; Felix.</p>
+    <p class="eyebrow rv" data-en="Share the moment">Comparte el Momento</p>
+    <h2 class="script-title rv" data-en="Shared Album">Álbum Compartido</h2>
+    <p class="album-note rv" data-en="We want to see the wedding through your eyes! Scan the code and upload your photos and videos to Joselyn &amp; Felix’s album.">¡Queremos ver la boda a través de tus ojos! Escanea el código y sube tus fotos y videos al álbum de Joselyn &amp; Felix.</p>
     <!-- PENDIENTE: link del álbum compartido -->
     <div class="qr-premium rv">
       <div class="qr-outer">
         <span class="qr-c tl"></span><span class="qr-c tr"></span><span class="qr-c bl"></span><span class="qr-c br"></span>
         <img class="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=360x360&amp;color=5c0701&amp;bgcolor=fffdf8&amp;margin=16&amp;data=https%3A%2F%2Fboda-joselyn-y-felix.vercel.app%2Falbum" alt="Código QR del álbum compartido de Joselyn y Felix">
       </div>
-      <span class="qr-label">Escanea para subir tus fotos</span>
+      <span class="qr-label" data-en="Scan to upload your photos">Escanea para subir tus fotos</span>
     </div>
   </section>
 
@@ -1110,8 +1231,8 @@ body{font-weight:500}
   <section id="regalos">
     <div class="env-rain" id="envRain" aria-hidden="true"></div>
     <div class="env-stage">
-      <p class="eyebrow rv">Celebra con Nosotros</p>
-      <h2 class="script-title rv">Lluvia de Sobres</h2>
+      <p class="eyebrow rv" data-en="Celebrate with us">Celebra con Nosotros</p>
+      <h2 class="script-title rv" data-en="Shower of Envelopes">Lluvia de Sobres</h2>
 
       <button class="env-interactive" id="envGift" type="button" aria-label="Sobre — toca para abrir" aria-expanded="false">
         <div class="env-body" id="envGiftBody">
@@ -1149,11 +1270,11 @@ body{font-weight:500}
             <path d="M18 8 Q26 3 34 8"/>
             <rect x="20" y="28" width="12" height="2.5" rx="1.25" fill="currentColor" stroke="none" opacity=".4"/>
           </svg>
-          <p class="env-title">Tu Presencia es Nuestro Regalo</p>
-          <p class="env-desc">El día del evento habrá una urna donde podrás depositar tu sobre con mucho cariño.</p>
+          <p class="env-title" data-en="Your Presence is Our Gift">Tu Presencia es Nuestro Regalo</p>
+          <p class="env-desc" data-en="On the day of the event there will be a box where you can leave your envelope with love.">El día del evento habrá una urna donde podrás depositar tu sobre con mucho cariño.</p>
         </div>
       </button>
-      <p class="env-tap-hint" id="envGiftHint">Toca para abrir</p>
+      <p class="env-tap-hint" id="envGiftHint" data-en="Tap to open">Toca para abrir</p>
     </div>
   </section>
 
@@ -1179,9 +1300,9 @@ body{font-weight:500}
           </g>
         </svg>
 
-        <p class="eyebrow">Tu compañía lo es todo</p>
-        <h2 class="script-title">Confirma tu Asistencia</h2>
-        <p class="rsvp-text">Por favor confírmanos tu asistencia antes del <strong>30 de octubre de 2026</strong>. Nos hace mucha ilusión saber que estarás con nosotros.</p>
+        <p class="eyebrow" data-en="Your company means everything">Tu compañía lo es todo</p>
+        <h2 class="script-title" data-en="RSVP">Confirma tu Asistencia</h2>
+        <p class="rsvp-text" data-en="Please confirm your attendance before <strong>October 30, 2026</strong>. We would love to know you will be with us.">Por favor confírmanos tu asistencia antes del <strong>30 de octubre de 2026</strong>. Nos hace mucha ilusión saber que estarás con nosotros.</p>
 
         <p class="rsvp-para-note" id="rsvpParaNote" style="display:none"></p>
 
@@ -1190,27 +1311,27 @@ body{font-weight:500}
         </div>
 
         <div class="rsvp-pases-display">
-          <div class="rsvp-pases-label">Pases reservados</div>
+          <div class="rsvp-pases-label" data-en="Passes reserved">Pases reservados</div>
           <div class="rsvp-pases-num" id="rsvpPasesBadge">1</div>
         </div>
 
         <div class="rsvp-toggle">
-          <button class="rsvp-toggle-btn" id="rsvpBtnYes" type="button">Asistiré</button>
-          <button class="rsvp-toggle-btn" id="rsvpBtnNo" type="button">No podré asistir</button>
+          <button class="rsvp-toggle-btn" id="rsvpBtnYes" type="button" data-en="I will attend">Asistiré</button>
+          <button class="rsvp-toggle-btn" id="rsvpBtnNo" type="button" data-en="I can’t attend">No podré asistir</button>
         </div>
 
         <p class="rsvp-names-hint" id="rsvpNamesHint" style="display:none"></p>
         <div class="rsvp-fields" id="rsvpNamesWrap" style="display:none"></div>
 
         <button type="button" id="rsvpSubmitBtn" class="rsvp-btn">
-          <span id="rsvpBtnText">Confirmar asistencia</span>
+          <span id="rsvpBtnText" data-en="Confirm attendance">Confirmar asistencia</span>
         </button>
 
         <p id="rsvp-feedback"></p>
 
         <div class="rsvp-deadline-chip">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5z"/></svg>
-          Fecha límite &middot; 30 de octubre 2026
+          <span data-en="Deadline &middot; October 30, 2026">Fecha límite &middot; 30 de octubre 2026</span>
         </div>
       </div>
     </div>
@@ -1438,13 +1559,81 @@ function initEnvelope(){
   }
 })();
 
+
+/* ═══ IDIOMA ═══ */
+var IDIOMA='es';
+var FRASES={
+  es:{
+    nombreCompleto:'Tu nombre completo', acomp:'Nombre del acompa\u00f1ante ',
+    menor:'Nombre del menor', menorN:'Nombre del menor ',
+    hint1:'Escribe tu nombre para confirmar tu asistencia',
+    hintN:function(pa,me){ return me>0
+      ? 'Escribe el nombre de cada persona ('+pa+' '+(pa===1?'pase':'pases')+' + '+me+' '+(me===1?'menor':'menores')+')'
+      : 'Escribe el nombre de cada persona ('+pa+' pases)'; },
+    para:'Esta invitaci\u00f3n es para ', enviando:'Enviando\u2026',
+    confirmar:'Confirmar asistencia', actualizar:'Actualizar respuesta',
+    elige:'Por favor selecciona si asistir\u00e1s o no.',
+    unNombre:'Por favor escribe al menos un nombre.',
+    okSi:'\u00a1Tu asistencia ha sido confirmada! Nos vemos pronto.',
+    okNo:'Hemos registrado que no podr\u00e1s asistir. \u00a1Gracias por avisarnos!',
+    yaSi:'\u00a1Ya tienes confirmada tu asistencia! Puedes actualizar tu respuesta.',
+    yaNo:'Ya tienes registrado que no podr\u00e1s asistir. Puedes cambiar tu respuesta.',
+    errorRed:'Error de conexi\u00f3n. Intenta de nuevo.',
+    cerrado:'Fecha l\u00edmite alcanzada', cerradoMsg:'La fecha para confirmar asistencia ha pasado.'
+  },
+  en:{
+    nombreCompleto:'Your full name', acomp:'Guest name ',
+    menor:'Child\u2019s name', menorN:'Child\u2019s name ',
+    hint1:'Write your name to confirm your attendance',
+    hintN:function(pa,me){ return me>0
+      ? 'Write the name of each guest ('+pa+' '+(pa===1?'pass':'passes')+' + '+me+' '+(me===1?'child':'children')+')'
+      : 'Write the name of each guest ('+pa+' passes)'; },
+    para:'This invitation is for ', enviando:'Sending\u2026',
+    confirmar:'Confirm attendance', actualizar:'Update my answer',
+    elige:'Please select whether you will attend or not.',
+    unNombre:'Please write at least one name.',
+    okSi:'Your attendance is confirmed! See you soon.',
+    okNo:'We have registered that you cannot attend. Thank you for letting us know!',
+    yaSi:'Your attendance is already confirmed! You can update your answer.',
+    yaNo:'We have you registered as unable to attend. You can change your answer.',
+    errorRed:'Connection error. Please try again.',
+    cerrado:'Deadline reached', cerradoMsg:'The deadline to confirm attendance has passed.'
+  }
+};
+window.T=FRASES.es;
+
+function aplicarIdioma(lang){
+  IDIOMA=lang; window.T=FRASES[lang];
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-en]').forEach(function(el){
+    if(!el.hasAttribute('data-es')) el.setAttribute('data-es', el.innerHTML.trim());
+    el.innerHTML = el.getAttribute('data-'+lang);
+  });
+}
+
+(function(){
+  var pantalla=document.getElementById('lang-screen');
+  if(!pantalla) return;
+  function elegir(lang){
+    aplicarIdioma(lang);
+    var cerrar=function(){ pantalla.style.display='none'; };
+    if(window.gsap) gsap.to(pantalla,{opacity:0,duration:.7,ease:'power2.inOut',onComplete:cerrar});
+    else cerrar();
+  }
+  pantalla.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click',function(e){ e.stopPropagation(); elegir(b.getAttribute('data-lang')); });
+  });
+  if(window.gsap) gsap.to(pantalla,{opacity:1,duration:.9,ease:'power2.out',delay:.2});
+  else pantalla.style.opacity=1;
+})();
+
 /* ── RSVP · PANEL DE INVITADOS ── */
 const PANEL_API = 'https://panel-invitados.vercel.app/api/confirmar';
 const RSVP_URL  = 'https://boda-joselyn-y-felix.vercel.app';
 const DEADLINE  = new Date(2026, 9, 30, 23, 59, 59, 999);
 
 let _pases = 1, _menores = 0, _para = '', _choice = null, _savedNames = [];
-const _placeholders = ['Tu nombre completo','Nombre del acompa\u00f1ante 1','Nombre del acompa\u00f1ante 2','Nombre del acompa\u00f1ante 3','Nombre del acompa\u00f1ante 4'];
+function _ph(i){ return i===0 ? T.nombreCompleto : T.acomp + i; }
 
 function initRSVP(){
   const params = new URLSearchParams(window.location.search);
@@ -1463,7 +1652,7 @@ function initRSVP(){
   const feedback=document.getElementById('rsvp-feedback');
   if(!btnYes) return;
 
-  if(_para){ note.textContent='Esta invitaci\u00f3n es para '+_para; note.style.display='block'; }
+  if(_para){ note.textContent=T.para+_para; note.style.display='block'; }
   badge.style.display='block';
 
   function actualizarBadge(){
@@ -1489,18 +1678,16 @@ function initRSVP(){
         if(d && (d.estado==='confirmado' || d.estado==='declino')){
           if(d.nombres_confirmados && d.nombres_confirmados.length) _savedNames=d.nombres_confirmados.slice();
           selectRsvp(d.estado==='confirmado'?'yes':'no');
-          btnText.textContent='Actualizar respuesta';
-          feedback.textContent = d.estado==='confirmado'
-            ? '\u00a1Ya tienes confirmada tu asistencia! Puedes actualizar tu respuesta.'
-            : 'Ya tienes registrado que no podr\u00e1s asistir. Puedes cambiar tu respuesta.';
+          btnText.textContent=T.actualizar;
+          feedback.textContent = d.estado==='confirmado' ? T.yaSi : T.yaNo;
         }
       }).catch(()=>{ actualizarBadge(); btnYes.disabled=false; btnNo.disabled=false; });
   } else { actualizarBadge(); }
 
   if(Date.now() > DEADLINE.getTime()){
     btnYes.disabled=true; btnNo.disabled=true; submitBtn.disabled=true;
-    btnText.textContent='Fecha l\u00edmite alcanzada';
-    feedback.textContent='La fecha para confirmar asistencia ha pasado.';
+    btnText.textContent=T.cerrado;
+    feedback.textContent=T.cerradoMsg;
   }
 }
 
@@ -1509,15 +1696,11 @@ function renderNames(){
   const hint=document.getElementById('rsvpNamesHint');
   wrap.innerHTML='';
   const total=_pases+_menores;
-  hint.textContent = total===1
-    ? 'Escribe tu nombre para confirmar tu asistencia'
-    : (_menores>0
-        ? 'Escribe el nombre de cada persona ('+_pases+' '+(_pases===1?'pase':'pases')+' + '+_menores+' '+(_menores===1?'menor':'menores')+')'
-        : 'Escribe el nombre de cada persona ('+_pases+' pases)');
+  hint.textContent = total===1 ? T.hint1 : T.hintN(_pases,_menores);
   for(let i=0;i<_pases;i++){
     const inp=document.createElement('input');
     inp.type='text'; inp.id='rsvpName'+i; inp.className='rsvp-input';
-    inp.placeholder=_placeholders[i]||('Acompa\u00f1ante '+i);
+    inp.placeholder=_ph(i);
     inp.autocomplete=i===0?'name':'off'; inp.maxLength=60;
     inp.value=_savedNames[i]||'';
     inp.addEventListener('input',()=>{_savedNames[i]=inp.value;});
@@ -1527,7 +1710,7 @@ function renderNames(){
     const idx=_pases+j;
     const inp=document.createElement('input');
     inp.type='text'; inp.id='rsvpName'+idx; inp.className='rsvp-input';
-    inp.placeholder=_menores===1?'Nombre del menor':('Nombre del menor '+(j+1));
+    inp.placeholder=_menores===1?T.menor:(T.menorN+(j+1));
     inp.autocomplete='off'; inp.maxLength=60;
     inp.value=_savedNames[idx]||'';
     inp.addEventListener('input',()=>{_savedNames[idx]=inp.value;});
@@ -1557,7 +1740,7 @@ function sendRSVP(){
   const submitBtn=document.getElementById('rsvpSubmitBtn');
   const btnText=document.getElementById('rsvpBtnText');
   const feedback=document.getElementById('rsvp-feedback');
-  if(!_choice){ feedback.textContent='Por favor selecciona si asistir\u00e1s o no.'; return; }
+  if(!_choice){ feedback.textContent=T.elige; return; }
   let names=[];
   if(_choice==='yes'){
     const total=_pases+_menores;
@@ -1566,9 +1749,9 @@ function sendRSVP(){
       const val=(el&&el.value?el.value:'').trim();
       if(val) names.push(val);
     }
-    if(names.length===0){ feedback.textContent='Por favor escribe al menos un nombre.'; return; }
+    if(names.length===0){ feedback.textContent=T.unNombre; return; }
   }
-  btnText.textContent='Enviando\u2026'; submitBtn.disabled=true; feedback.textContent='';
+  btnText.textContent=T.enviando; submitBtn.disabled=true; feedback.textContent='';
   fetch(PANEL_API,{
     method:'POST', headers:{'Content-Type':'application/json'},
     body: JSON.stringify({
@@ -1578,13 +1761,11 @@ function sendRSVP(){
       nombres_confirmados:names
     })
   }).then(r=>r.json()).then(()=>{
-    btnText.textContent='Actualizar respuesta'; submitBtn.disabled=false;
-    feedback.textContent = _choice==='yes'
-      ? '\u00a1Tu asistencia ha sido confirmada! Nos vemos pronto.'
-      : 'Hemos registrado que no podr\u00e1s asistir. \u00a1Gracias por avisarnos!';
+    btnText.textContent=T.actualizar; submitBtn.disabled=false;
+    feedback.textContent = _choice==='yes' ? T.okSi : T.okNo;
   }).catch(()=>{
-    btnText.textContent='Confirmar asistencia'; submitBtn.disabled=false;
-    feedback.textContent='Error de conexi\u00f3n. Intenta de nuevo.';
+    btnText.textContent=T.confirmar; submitBtn.disabled=false;
+    feedback.textContent=T.errorRed;
   });
 }
 
