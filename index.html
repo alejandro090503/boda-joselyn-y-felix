@@ -1929,6 +1929,20 @@ function initRSVP(){
       var inputs = fieldsEl.querySelectorAll('.rsvp-input');
       for(var i=0;i<inputs.length;i++){ var v = inputs[i].value.trim(); if(v) nombres.push(v); }
       if(nombres.length === 0){ setFeedback(T('Por favor escribe al menos un nombre.','Please write at least one name.'), ROJO); return; }
+      /* Dos personas en un solo campo ("Ana & Luis") se guardaban como UNA:
+         el panel contaba un lugar de menos. Se pide un nombre por campo. */
+      var doble = null;
+      for(var d=0; d<inputs.length; d++){
+        if(/[&\/+,]|\sand\s/i.test(inputs[d].value.trim())){ doble = inputs[d]; break; }
+      }
+      if(doble){
+        doble.classList.add('rsvp-input-falta');
+        setFeedback(T('Escribe un solo nombre por campo. Si asisten más personas, sube el contador y escribe cada nombre en su campo.',
+                      'Write one name per field. If more people are coming, raise the counter and write each name in its own field.'), ROJO);
+        if(feedEl) feedEl.scrollIntoView({ block:'nearest', behavior:'smooth' });
+        doble.focus({ preventScroll:true });
+        return;
+      }
       if(nombres.length < pasesAUsar){
         var faltan = pasesAUsar - nombres.length, primero = null;
         /* Se marcan los campos vacíos para que se note cuál falta */
